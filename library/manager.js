@@ -1,8 +1,9 @@
-class Employee {
-    constructor(name, id, email, officeNumber) {
-        this.name = name;
-        this.id = id;
-        this.email = email;
+const Employee = require(library/employee.js)
+
+class Manager extends Employee {
+    constructor (name, id, email, officeNumber){
+        super(name, id, email);
+
         this.officeNumber = officeNumber;
     }
 
@@ -10,21 +11,10 @@ class Employee {
         return "Manager";
     }
 
-    getName() {
-        return this.name;
-    }
-
-    getId() {
-        return this.id;
-    }
-    
-    getEmail() {
-        return this.email;
-    }
-
-    getOfficeNumber() {
+    officeNumber() {
         return this.officeNumber;
     }
+
 }
 
 module.exports = Manager;
