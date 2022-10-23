@@ -221,7 +221,7 @@ function addIntern() {
         },
     ]).then(answers =>{
         console.log(answers);
-        const intern = new Engineer(answers.name, answers.id, answers.email, answers.gitHub);
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.gitHub);
         Employee.push(intern);
         promptMenu();
     })     

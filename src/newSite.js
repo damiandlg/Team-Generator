@@ -12,7 +12,7 @@ const newSite = (team) => {
            <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: ${manager.id}</li>
             <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.email}">${manager.email}</a></span></li>
-            <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
+            <li class="list-group-item">Office Number: ${manager.number}</li>
             </ul>
         </div>
         `;
@@ -28,7 +28,7 @@ const newSite = (team) => {
            <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: ${engineer.id}</li>
             <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.email}">${engineer.email}</a></span></li>
-            <li class="list-group-item">Github Username: <a target="_blank" href="https://github.com/${engineer.githubUsername}">${engineer.githubUsername}</a></li>
+            <li class="list-group-item">Github Username: <a target="_blank">${engineer.gitHub}</a></li>
             </ul>
         </div>
         `;
@@ -63,11 +63,8 @@ const newSite = (team) => {
             generateIntern(team[i]);
         }
     }
-
-    // join the HTML blocks
     return html.join('');
 }
-// export function to generate entire page
 module.exports = team => {
 
     return `
