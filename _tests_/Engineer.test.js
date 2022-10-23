@@ -1,5 +1,5 @@
-const Engineer  = require(library/Engineer.js)
-const engineer = new Engineer('damian', '0000', 'damian@gmail.com', 'damiandlg');
+const Engineer  = require("../lib/Engineer.js")
+const engineer = new Engineer('Damian', '0000', 'damian@gmail.com', 'damiandlg');
 
 test('test to get values from new employee', () => {
     expect(engineer.name).toBe('Damian');
@@ -12,12 +12,12 @@ test('getName() method', () => {
     expect(engineer.getName()).toBe('Damian');
 });
 
-test('getId() method', () => {ß
+test('getId() method', () => {
     expect(engineer.getId()).toBe('0000');
 });
 
 test('getEmail() method', () => {
-    expect(engineer.email()).toBe('Damian@gmail.com');
+    expect(engineer.getEmail()).toBe('damian@gmail.com');
 });
 
 test('getRole() method', () => {

@@ -1,5 +1,5 @@
-const Intern  = require(library/Intern.js)
-const intern = new Intern('damian', '0000', 'damian@gmail.com', 'Suffolk');
+const Intern  = require("../lib/Intern.js")
+const intern = new Intern('Damian', '0000', 'damian@gmail.com', 'Suffolk');
 
 test('test to get values from new employee', () => {
     expect(intern.name).toBe('Damian');
@@ -12,12 +12,12 @@ test('getName() method', () => {
     expect(intern.getName()).toBe('Damian');
 });
 
-test('getId() method', () => {ß
+test('getId() method', () => {
     expect(intern.getId()).toBe('0000');
 });
 
 test('getEmail() method', () => {
-    expect(intern.email()).toBe('Damian@gmail.com');
+    expect(intern.getEmail()).toBe('damian@gmail.com');
 });
 
 test('getRole() method', () => {

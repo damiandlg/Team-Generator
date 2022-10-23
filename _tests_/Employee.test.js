@@ -1,6 +1,5 @@
-
-const Employee = require(library/Employee.js)
-const employee = new Employee('damian', '0000', 'damian@gmail.com');
+const Employee = require("../lib/Employee.js")
+const employee = new Employee('Damian', '0000', 'damian@gmail.com');
 
 test('test to get values from new employee', () => {
     expect(employee.name).toBe('Damian');
@@ -12,12 +11,12 @@ test('getName() method', () => {
     expect(employee.getName()).toBe('Damian');
 });
 
-test('getId() method', () => {ß
+test('getId() method', () => {
     expect(employee.getId()).toBe('0000');
 });
 
 test('getEmail() method', () => {
-    expect(employee.email()).toBe('Damian@gmail.com');
+    expect(employee.getEmail()).toBe('damian@gmail.com');
 });
 
 test('getRole() method', () => {
