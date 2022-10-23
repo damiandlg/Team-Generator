@@ -6,27 +6,13 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/intern');
 
+const path = require('path');
+const OUTPUT_DIR = path.resolve(__dirname, "result")
+const outputPath = path.join(OUTPUT_DIR, "newTeam.html");
 const Employee = [];
 
-function startApp() {
+const startApp = () => {
     inquirer.prompt([
-        {
-            name: 'StartApp',
-            type: 'confirm',
-            message: 'Want to generate a team?',
-        }
-    ]).then((res,err) => {
-        if (err) console.error(err);
-        if (res.startApp) {
-            addEngineer();
-        } else {
-            process.exit();
-        }
-    });
-}
-
-    function addManager(){
-        inquirer.prompt([
             {
                 type: 'input',
                 name: 'name',
@@ -82,7 +68,7 @@ function startApp() {
             ]).then(answers =>{
                 console.log(answers);
                 const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-                employees.push(manager);
+                Employee.push(manager);
                 promptMenu();
             })
                 
@@ -172,7 +158,7 @@ function addEngineer() {
     ]).then(answers =>{
         console.log(answers);
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.gitHub);
-        employees.push(engineer);
+        Employee.push(engineer);
         promptMenu();
     })
         
@@ -235,7 +221,7 @@ function addIntern() {
     ]).then(answers =>{
         console.log(answers);
         const intern = new Engineer(answers.name, answers.id, answers.email, answers.gitHub);
-        employees.push(intern);
+        Employee.push(intern);
         promptMenu();
     })     
 }  
@@ -245,18 +231,10 @@ const renderTeam = () => {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
     }
-    fs.writeFileSync(outputPath, generateSite(teamMembers), "utf-8");
+    fs.writeFileSync(outputPath, generateSite(Employee), "utf-8");
 }
 
-
-    
-
-
-
 startApp();
-
-
-
 
 
 
