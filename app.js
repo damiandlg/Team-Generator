@@ -7,6 +7,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/intern');
 
 const path = require('path');
+const newSite = require("./src/newSite");
 const OUTPUT_DIR = path.resolve(__dirname, "result")
 const outputPath = path.join(OUTPUT_DIR, "newTeam.html");
 const Employee = [];
@@ -231,7 +232,7 @@ const renderTeam = () => {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
     }
-    fs.writeFileSync(outputPath, generateSite(Employee), "utf-8");
+    fs.writeFileSync(outputPath, newSite(Employee), "utf-8");
 }
 
 startApp();
